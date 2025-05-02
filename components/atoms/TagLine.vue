@@ -19,6 +19,6 @@ import Under from './Under.vue';
     /* font-size: 72px; */
     font-size: calc(50vh / 6);
     font-weight: 500;
-    line-height: 100px;
+    line-height: 130%;
 }
 </style>
