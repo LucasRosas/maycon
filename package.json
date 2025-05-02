@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "3.4.0",
+    "@nuxt/eslint": "1.2.0",
+    "@nuxt/image": "1.10.0",
+    "@nuxt/scripts": "0.11.5",
+    "@nuxt/types": "^2.18.1",
+    "@unhead/vue": "^2.0.0-rc.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "eslint": "^9.0.0",
+    "firebase": "^11.5.0",
+    "lucide-vue-next": "^0.485.0",
+    "nuxt": "^3.16.1",
+    "nuxt-vuefire": "^1.0.5",
+    "reka-ui": "^2.1.1",
+    "shadcn-nuxt": "1.0.3",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vuefire": "^3.2.1"
+  },
+  "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321",
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.13.2"
+  }
+}
