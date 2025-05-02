@@ -117,41 +117,46 @@ onMounted(() => {
     color: white;
     transform: none;
     display: flex;
-    gap: 2.75rem;
-    font-weight: 500;
+    gap: 44px;
+    font-weight: medium;
     opacity: 1;
+    align-self: flex-start;
 }
 
 .menu-item {
-    width: 60px;
+    width: 90px;
+    width: fit-content;
     cursor: pointer;
+    font-size: 20px;
+
 }
 
 .bullet {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     background-color: white;
     border-radius: 50%;
     margin-right: 0.5rem;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s cubic-bezier(0.6, 0, 0.1, 1);
+
 
 
     &.home {
         opacity: 0;
         scale: 0;
-        translate: 80px 300%;
+        translate: 85px 36px;
     }
 
     &.works {
-        translate: 80px 300%;
+        translate: 85px 36px;
     }
 
     &.about {
-        translate: 185px 300%;
+        translate: 186px 36px;
     }
 
     &.contact {
-        translate: 300px 300%;
+        translate: 300px 36px;
     }
 }
 </style>

@@ -20,10 +20,9 @@
     translate: 0 -100vh;
 
     .works__content {
-        padding: 0 2rem 2rem 2rem;
+        padding: 0 40px 56px 56px;
         display: flex;
-        gap: 1.5rem;
-
+        gap: 16px;
         height: calc(100% - 150px);
         min-width: 100vw;
         position: absolute;

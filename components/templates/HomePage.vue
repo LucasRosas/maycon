@@ -21,13 +21,13 @@ import MayconGroup from '../molecules/MayconGroup.vue';
 
     .home__content {
         position: absolute;
-        width: 80vw;
-        top: 50%;
+        width: calc(100vw - 192px);
+        bottom: 96px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0);
         display: flex;
         gap: 6rem;
-        height: calc(100vh - 18rem);
+        height: calc(100vh - 232px);
 
         .TagLine {
             margin-top: auto;

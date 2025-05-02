@@ -67,7 +67,7 @@
 <style>
 .DesignBrandUi {
     svg {
-        animation: spin 4s cubic-bezier(0.6, 0, 0.1, 1) infinite;
+        animation: spin 8s linear infinite;
         transform-origin: 105.5px 105.5px;
     }
 }
@@ -77,13 +77,13 @@
         transform: rotate(0deg);
     }
 
-    33% {
+    /* 33% {
         transform: rotate(120deg);
     }
 
     66% {
         transform: rotate(240deg);
-    }
+    } */
 
     100% {
         transform: rotate(360deg);

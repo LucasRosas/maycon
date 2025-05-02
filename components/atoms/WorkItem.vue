@@ -34,7 +34,8 @@ defineProps({
 <style>
 .WorkItem {
     height: 100%;
-    width: 30vw;
+    width: calc((100vw - 2 * 56px - 2 * 16px) / 3);
+    /*  */
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
