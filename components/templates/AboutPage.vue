@@ -38,11 +38,15 @@
 <style>
 .aboutPage .content {
     display: flex;
-    gap: 2rem;
-    width: 60vw;
+    gap: 32px;
+    width: calc(32px + 96px + 660px);
+    /* max-width: 1200px; */
     margin: 2rem auto;
-    font-size: 1.5rem;
+    font-size: 20px;
+    line-height: 155%;
+    color: var(--black-color-800);
     font-weight: 400;
+    /*TODO: Se diminuir mais, vira tablet e a largura ocupa tudo menor margem */
 }
 
 .aboutPage {

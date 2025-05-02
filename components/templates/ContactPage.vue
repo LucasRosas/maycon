@@ -105,13 +105,14 @@ const copyLink = () => {
     }
 
     .tagline {
-        font-size: 2rem;
+        font-size: 40px;
         font-weight: 400;
         padding: 2rem;
         margin-bottom: -4rem;
         display: flex;
         gap: 1rem;
         align-items: center;
+        font-weight: 500;
     }
 
     .email-container {
@@ -120,8 +121,9 @@ const copyLink = () => {
 
 
         .--email {
-            font-size: 5rem;
-            line-height: 5rem;
+            font-weight: 600;
+            font-size: 72px;
+            line-height: 100%;
             border-bottom: 5px solid black;
             width: fit-content;
 

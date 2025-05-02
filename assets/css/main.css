@@ -17,3 +17,8 @@
 p {
     margin-block: 1rem;
 }
+
+html {
+    scroll-behavior: smooth;
+
+}

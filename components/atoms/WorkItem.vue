@@ -34,7 +34,7 @@ defineProps({
 <style>
 .WorkItem {
     height: 100%;
-    width: calc((100vw - 2 * 56px - 2 * 16px) / 3);
+    width: calc((100vw - 2 * 64px - 2 * 16px) / 3);
     /*  */
     position: relative;
     cursor: pointer;
@@ -57,7 +57,7 @@ defineProps({
 
     .overlay {
         height: 100%;
-        padding: 2.5rem;
+        padding: 40px;
         display: flex;
         justify-content: space-between;
         gap: 2rem;
@@ -81,8 +81,9 @@ defineProps({
     }
 
     .work__title {
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-size: 48px;
+        line-height: 110%;
+        font-weight: medium;
         color: white;
         z-index: 1;
     }
