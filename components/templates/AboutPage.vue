@@ -65,13 +65,13 @@
 @keyframes aboutPage {
 
     0%,
-    45% {
+    49% {
         transform: translateX(100vw);
 
     }
 
     50%,
-    70% {
+    74% {
         transform: translateX(0vw);
     }
 

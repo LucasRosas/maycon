@@ -75,15 +75,7 @@
 @keyframes spin {
     0% {
         transform: rotate(0deg);
-    }
-
-    /* 33% {
-        transform: rotate(120deg);
-    }
-
-    66% {
-        transform: rotate(240deg);
-    } */
+    }  
 
     100% {
         transform: rotate(360deg);

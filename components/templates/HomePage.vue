@@ -1,7 +1,6 @@
 <template>
     <section id="home" class="homePage">
         <div class="home__content">
-
             <AtomsTagLine />
             <MayconGroup />
         </div>
@@ -10,6 +9,10 @@
 
 <script setup lang='ts'>
 import MayconGroup from '../molecules/MayconGroup.vue';
+const header = document.querySelector('.Header')
+if (header) {
+    header.classList.remove('absolute')
+}
 
 </script>
 
@@ -33,6 +36,10 @@ import MayconGroup from '../molecules/MayconGroup.vue';
             margin-top: auto;
         }
 
+        .MayconGroup {
+            margin-inline: auto;
+        }
+
 
     }
 
@@ -42,7 +49,7 @@ import MayconGroup from '../molecules/MayconGroup.vue';
 @keyframes homePage {
 
     0%,
-    10% {
+    24% {
         transform: translateX(0px);
     }
 

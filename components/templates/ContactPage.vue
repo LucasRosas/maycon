@@ -141,7 +141,7 @@ const copyLink = () => {
 @keyframes contactPage {
 
     0%,
-    70% {
+    74% {
         transform: translateX(100vw);
     }
 
@@ -149,8 +149,6 @@ const copyLink = () => {
     100% {
         transform: translateX(0vw);
     }
-
-
 }
 
 #ballon {

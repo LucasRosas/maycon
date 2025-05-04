@@ -5,6 +5,9 @@
             <AtomsWorkItem item="2" />
             <AtomsWorkItem item="3" />
             <AtomsWorkItem item="4" />
+            <AtomsWorkItem item="3" />
+            <AtomsWorkItem item="1" />
+            <AtomsWorkItem item="2" />
         </div>
     </section>
 </template>
@@ -43,7 +46,7 @@
 
     43%,
     100% {
-        transform: translateX(-33vw);
+        transform: translateX(calc(-100% + 100vw));
     }
 
 
@@ -52,12 +55,12 @@
 @keyframes worksPage {
 
     0%,
-    10% {
+    24% {
         transform: translateX(100vw);
     }
 
     25%,
-    45% {
+    49% {
         transform: translateX(0vw);
     }
 

@@ -10,15 +10,34 @@
 
 <script setup>
 
+const setObserver = () => {
+    const intersectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            console.log(entry)
+            if (entry.isIntersecting) {
+                entry.target.style.width = '100%'
+            } else {
+                entry.target.style.width = '0'
+            }
+        })
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    })
 
-onMounted(() => {
-    getPosition()
-})
-
-const getPosition = () => {
-
+    const sections = document.querySelectorAll('.under>svg')
+    sections.forEach(section => {
+        intersectionObserver.observe(section)
+    })
 
 }
+
+
+onMounted(() => {
+    setObserver()
+})
+
 
 </script>
 
@@ -36,17 +55,7 @@ const getPosition = () => {
     z-index: -1;
     width: 0;
     height: 1.5rem;
-    animation: grow 0.5s ease-in-out 0.5s forwards;
+    transition: all 0.5s ease-in-out;
 
-}
-
-@keyframes grow {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: calc(100% - 1rem);
-    }
 }
 </style>

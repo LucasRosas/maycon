@@ -28,8 +28,7 @@ router.beforeEach((to, from) => {
 })
 
 
-
-const scrollToSection = (section: string) => {
+const scrollToSection = (section) => {
     if (section == 'home') {
         window.scrollTo({
             top: 0,
@@ -71,7 +70,6 @@ const goto = (section: string) => {
 const configOberver = () => {
     const intersectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            console.log(entry)
             if (entry.isIntersecting) {
                 pageActive.value = entry.target.getAttribute('id')
             }
@@ -110,7 +108,12 @@ onMounted(() => {
     justify-content: space-between;
     align-items: center;
     mix-blend-mode: difference;
-    z-index: 1;
+    z-index: 2;
+
+    &.absolute {
+        position: absolute;
+
+    }
 }
 
 .Header>.menu {

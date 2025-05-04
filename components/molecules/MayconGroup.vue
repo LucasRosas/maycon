@@ -17,6 +17,8 @@ import DesignBrandUi from '../atoms/DesignBrandUi.vue';
     width: 399px;
     animation: paralax-1 1s ease-in-out;
     animation-timeline: scroll();
+    outline: 1px solid red;
+
 
     .DesignBrandUi {
         position: absolute;
@@ -33,7 +35,7 @@ import DesignBrandUi from '../atoms/DesignBrandUi.vue';
         transform: translate(0, 0%);
     }
 
-    25%,
+
     100% {
         transform: translate(-50vw, 0%);
     }

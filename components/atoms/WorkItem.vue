@@ -1,5 +1,5 @@
 <template>
-    <div class='WorkItem'>
+    <div ref="element" class='WorkItem' @click="open">
         <div class="work-image" :style="{ backgroundImage: `url(/work-${item}.png)` }" />
         <div class="overlay">
             <div class="work__title">{{ title }}</div>
@@ -17,16 +17,65 @@
 
 <script setup lang='ts'>
 
-defineProps({
+const props = defineProps({
     item: {
         type: String,
-        default: '1',
+        default: '',
     },
     title: {
         type: String,
         default: 'Uberaba Sport Club',
     }
 })
+
+
+const position = ref({
+    x: 0,
+    y: 0,
+    height: 0,
+    width: 0,
+})
+
+const element = ref<HTMLElement | null>(null)
+
+const open = () => {
+    if (!element.value) return
+    const { x, y, height, width } = element.value.getBoundingClientRect()
+    position.value.x = x
+    position.value.y = y
+    position.value.height = height
+    position.value.width = width
+    const clone = element.value.cloneNode(true) as HTMLElement
+    clone.style.top = `${position.value.y}px`
+    clone.style.left = `${position.value.x}px`
+    clone.style.width = `${position.value.width}px`
+    clone.style.height = `${position.value.height}px`
+    clone.classList.add('active')
+    const bridge = document.getElementById('bridge')
+    if (bridge) {
+        bridge.appendChild(clone)
+        setTimeout(() => {
+            setTimeout(() => {
+                clone.style.top = `0px`
+                clone.style.left = `0px`
+                clone.style.width = `100vw`
+                clone.style.height = `70vh`
+            }, 0)
+            setTimeout(() => {
+                console.log('navigating', props)
+                useRouter().push(`/project/${props.item}`)
+            }, 300)
+            setTimeout(() => {
+                nextTick(() => {
+                    bridge.removeChild(clone)
+                })
+            }, 400)
+        }, 0)
+    }
+
+
+
+}
 
 
 </script>
@@ -38,7 +87,7 @@ defineProps({
     /*  */
     position: relative;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
     overflow: clip;
 
     .work-image {
@@ -88,6 +137,17 @@ defineProps({
         z-index: 1;
     }
 
+    &.active {
+        position: fixed;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+        pointer-events: none;
+    }
 
+
+}
+
+#bridge {
+    position: relative;
 }
 </style>

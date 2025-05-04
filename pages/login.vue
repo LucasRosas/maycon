@@ -31,7 +31,7 @@ const loginWithGoogle = () => {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log("User logged in:", user);
-      router.push("/");
+      router.push("/admin");
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -41,4 +41,8 @@ const loginWithGoogle = () => {
 };
 </script>
 
-<style></style>
+<style>
+.LoginPage__container {
+  padding: 110px 96px;
+}
+</style>

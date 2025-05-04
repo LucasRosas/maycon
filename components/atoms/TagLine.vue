@@ -15,8 +15,6 @@ import Under from './Under.vue';
 
 <style>
 .TagLine {
-
-    /* font-size: 72px; */
     font-size: calc(50vh / 6);
     font-weight: 500;
     line-height: 130%;
