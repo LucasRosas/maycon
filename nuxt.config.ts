@@ -3,7 +3,20 @@ import { defineNuxtConfig } from "nuxt/config";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
+  vite: {
+    define: {
+      "process.env.DEBUG": "false",
+      __dirname: JSON.stringify("/"),
+    },
+    build: {
+      target: "esnext", // Força o uso de ES Modules modernos
+    },
+  },
+
+  // Configuração específica para deploy na Vercel
   nitro: {
+    preset: "vercel",
+    serveStatic: true,
     esbuild: {
       options: {
         target: "esnext",
