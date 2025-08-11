@@ -8,6 +8,16 @@
 </template>
 
 <script setup lang="ts">
+onMounted(() => {
+  const header = document.querySelector('.Header')
+  if (header) {
+    header.classList.add('fixed')
+  }
+  const colorMode = useColorMode()
+  colorMode.preference = 'light'
+})
+
+
 </script>
 
 <style>

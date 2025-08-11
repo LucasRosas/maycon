@@ -3,36 +3,51 @@
         <div class="content">
             <AtomsMayconAvatar :size="96" />
             <div class="about__text">
-                <div>
-                    I am currently a Senior UI Designer at Dentsu World Services Brazil, where I use my expertise in
-                    Figma and other
-                    design tools to create user interfaces that are both visually appealing and functional. With a
-                    background in
-                    Multimedia Production and certifications in Visual Communication, I focus on balancing aesthetics
-                    and usability,
-                    always creating efficient and creative solutions that elevate user experiences and deliver business
-                    value.
-                </div>
-                <div>
-                    Throughout my career, I’ve worked on projects that enhance clients' digital experiences, always
-                    striving for
-                    innovation and results in various sectors, from education to health companies. My skills in layout
-                    design,
-                    branding, and interface design, combined with fluent communication in Portuguese and English, enable
-                    me to
-                    collaborate effectively in multicultural teams.
-                </div>
+                <template v-if="lang == 'pt'">
+                    <div>
+                        Atualmente, sou Senior UI Designer na Dentsu World Services Brasil, onde uso minha experiência
+                        com Figma e outras ferramentas de design para criar interfaces de usuário que sejam bonitas e
+                        funcionais. Tenho formação em Produção Multimídia e certificações em Comunicação Visual, e
+                        sempre busco equilibrar a estética com a usabilidade. Ao longo da minha carreira, trabalhei em
+                        projetos que melhoram a experiência digital dos clientes, com foco em inovação e resultados.
+                    </div>
+                    <div>Já trabalhei com design em vários setores, desde educação até empresas de saúde. Minhas
+                        habilidades em design de layout, branding e interfaces, junto com a fluência em português e
+                        inglês, me ajudam a colaborar bem em equipes multiculturais. Sou apaixonado por criar soluções
+                        criativas e eficientes que melhoram a experiência do usuário e agregam valor para os negócios.
+                    </div>
+                </template>
+                <template v-else>
+                    <div>
+                        I am currently a Senior UI Designer at Dentsu World Services Brazil, where I use my expertise in
+                        Figma and other design tools to create user interfaces that are both visually appealing and
+                        functional. With a background in Multimedia Production and certifications in Visual
+                        Communication, I focus on balancing aesthetics and usability, always creating efficient and
+                        creative solutions that elevate user experiences and deliver business value.
+                    </div>
+                    <div>
+                        Throughout my career, I’ve worked on projects that enhance clients' digital experiences, always
+                        striving for innovation and results in various sectors, from education to health companies. My
+                        skills in layout design, branding, and interface design, combined with fluent communication in
+                        Portuguese and English, enable me to collaborate effectively in multicultural teams.
+                    </div>
+                </template>
                 <div class="about__buttons flex gap-2">
                     <AtomsBehanceIcon />
                     <AtomsLinkedinIcon />
                     <AtomsInstagramIcon />
                 </div>
             </div>
+
         </div>
     </section>
 </template>
 
 <script setup lang='ts'>
+const lang = ref('pt')
+onMounted(() => {
+    lang.value = localStorage.getItem('lang')
+})
 </script>
 
 <style>

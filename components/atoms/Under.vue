@@ -13,7 +13,6 @@
 const setObserver = () => {
     const intersectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            console.log(entry)
             if (entry.isIntersecting) {
                 entry.target.style.width = '100%'
             } else {

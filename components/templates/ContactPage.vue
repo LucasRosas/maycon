@@ -1,8 +1,9 @@
 <template>
     <section id="contact" class="contactPage">
         <div class="content">
-            <div class="tagline">
-                Had an idea? Let's talk
+            <div class="tagline">{{
+                lang == 'pt' ? 'Teve uma ideia? Bora conversar sobre' :
+                    "Had an idea? Let's talk" }}
                 <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_16_174" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="26"
                         height="22">
@@ -43,7 +44,7 @@
 const text = ref('click to copy link')
 const handleMouseMove = (event) => {
     const x = event.clientX
-    const y = event.clientY - 50
+    const y = event.clientY - 55
     const ballon = document.getElementById('ballon')
     if (ballon) {
         ballon.style.left = `${x}px`
@@ -54,8 +55,6 @@ const handleMouseMove = (event) => {
 
 const copyLink = () => {
     const email = 'portugal.maycon@icloud.com'
-
-    let copied = false
 
     navigator.clipboard.readText().then((value) => {
         if (value === email) {
@@ -80,6 +79,11 @@ const copyLink = () => {
         console.error('Failed to read clipboard: ', err)
     })
 }
+
+const lang = ref('pt')
+onMounted(() => {
+    lang.value = localStorage.getItem('lang')
+})
 </script>
 
 <style>
@@ -116,9 +120,7 @@ const copyLink = () => {
     }
 
     .email-container {
-        cursor: none;
         padding: 2rem;
-
 
         .--email {
             font-weight: 600;

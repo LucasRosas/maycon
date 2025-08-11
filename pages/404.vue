@@ -30,6 +30,10 @@
 </template>
 
 <script setup lang='ts'>
+onMounted(() => {
+    const colorMode = useColorMode()
+    colorMode.preference = 'light'
+})
 </script>
 
 <style>

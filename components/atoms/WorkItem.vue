@@ -1,6 +1,7 @@
 <template>
     <div ref="element" class='WorkItem' @click="open">
-        <div class="work-image" :style="{ backgroundImage: `url(/work-${item}.png)` }" />
+
+        <div class="work-image" :style="{ backgroundImage: `url(${thumbnail})` }" />
         <div class="overlay">
             <div class="work__title">{{ title }}</div>
             <div class="work__arrow">
@@ -25,6 +26,14 @@ const props = defineProps({
     title: {
         type: String,
         default: 'Uberaba Sport Club',
+    },
+    thumbnail: {
+        type: String,
+        default: '',
+    },
+    data: {
+        type: Object,
+        default: () => { }
     }
 })
 
@@ -52,6 +61,7 @@ const open = () => {
     clone.style.height = `${position.value.height}px`
     clone.classList.add('active')
     const bridge = document.getElementById('bridge')
+    localStorage.setItem('data', JSON.stringify(props.data))
     if (bridge) {
         bridge.appendChild(clone)
         setTimeout(() => {
@@ -62,14 +72,13 @@ const open = () => {
                 clone.style.height = `70vh`
             }, 0)
             setTimeout(() => {
-                console.log('navigating', props)
                 useRouter().push(`/project/${props.item}`)
             }, 300)
             setTimeout(() => {
                 nextTick(() => {
                     bridge.removeChild(clone)
                 })
-            }, 400)
+            }, 350)
         }, 0)
     }
 

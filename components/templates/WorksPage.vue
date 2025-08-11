@@ -1,18 +1,41 @@
 <template>
     <section id="works" class="worksPage">
         <div class="works__content">
-            <AtomsWorkItem item="1" />
-            <AtomsWorkItem item="2" />
-            <AtomsWorkItem item="3" />
-            <AtomsWorkItem item="4" />
-            <AtomsWorkItem item="3" />
-            <AtomsWorkItem item="1" />
-            <AtomsWorkItem item="2" />
+            <template v-for="value in posts">
+                <AtomsWorkItem :item="value.id" :title="value.title" :thumbnail="value.thumbnail" :data="value" />
+            </template>
         </div>
     </section>
 </template>
 
 <script setup lang='ts'>
+
+
+const loading = ref(true)
+const posts = ref<Post[]>([])
+
+const fetchPosts = async () => {
+    let storagedData = localStorage.getItem('posts')
+    posts.value = storagedData ? JSON.parse(storagedData) : []
+    loading.value = true
+    const { data, error } = await useFetch('/api/posts', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    if (error.value) {
+        console.error(error.value)
+    }
+    loading.value = false
+    posts.value = data.value
+    localStorage.setItem('posts', JSON.stringify(data.value))
+}
+
+onMounted(async () => {
+    await fetchPosts()
+})
+
 </script>
 
 <style>
